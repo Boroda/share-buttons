@@ -1,137 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
-    <title>Share buttons</title>
-    <meta property="og:url"           content="http://boroda.github.io/share-buttons/" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Test Share button website title Facebook" />
-    <meta property="og:description"   content="Test Share button description" />
-    <meta property="og:image"         content="https://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg" />
-</head>
-<body>
-    <h1>Testing social networks share buttons</h1>
-    <ul>
-        <li>
-            <a target="_blank" href="https://www.facebook.com/dialog/share?app_id=476189115902735&display=popup&href=http://boroda.github.io/share-buttons/&redirect_uri=http://boroda.github.io/share-buttons/">Facebook</a>
-        </li>
-        <li>
-            <a href="#">Twitter</a>
-        </li>
-        <li>
-            <a href="#">Pinterest</a>
-        </li>
-        <li>
-            <a href="#">Google Plus</a>
-        </li>
-    </ul>
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <title>FB Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Your share button code -->
-    <div class="fb-share-button"
-         data-href="http://boroda.github.io/share-buttons/"
-         data-layout="button_count">My Facebook button</div>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http://boroda.github.io/share-buttons/" target="_blank" class="icon"><i class="sss-facebook"></i></a>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<button type="button" id="button0">Share 0 (method: 'feed')</button>
+&nbsp;
+<button type="button" id="button1">Share 1 (method: 'feed')</button>
+
+<br>
+
+<button type="button" id="button2">Share 2 (method: 'stream.share')</button>
+<script>
+    $(function() {
+        $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
+            FB.init({
+                appId: '476189115902735',
+                version: 'v2.5'
+            });
+
+            $('#button0').click(function() {
+                FB.ui({
+                    method: 'feed',
+                    name: 'Share 0',
+                    link: 'https://www.google.com.ua/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=Share+0',
+                    picture: 'http://placehold.it/350x150/1e6bb8',
+                    caption: 'Caption 0',
+                    description: 'Description 0',
+                    message: 'Message 0'
+                });
+            });
+
+            $('#button1').click(function() {
+                FB.ui({
+                    method: 'feed',
+                    name: 'Share 1',
+                    link: 'https://www.google.com.ua/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=Share+1',
+                    picture: 'http://placehold.it/350x150/B84443',
+                    caption: 'Caption 1',
+                    description: 'Description 1',
+                    message: 'Message 1'
+                });
+            });
+
+            $('#button2').click(function() {
+                FB.ui({
+                    method: 'stream.publish',
+                    display: 'iframe',
+                    user_message_prompt: 'User message prompt',
+                    message: 'Message',
+                    attachment: {
+                        name: 'Attachment name',
+                        caption: 'Attachment caption',
+                        description: 'Attachment description',
+                        href: 'https://www.google.com.ua/search?q=Attachment+href&oq=Attachment+href&aqs=chrome..69i57.187j0j9&sourceid=chrome&ie=UTF-8',
+                        media: [{
+                            'type': 'image',
+                            'src': 'http://placehold.it/350x150/3DFF4B',
+                            'href': 'https://www.google.com.ua/search?q=media+type+image&oq=media+type+image&aqs=chrome..69i57j0l5.364j0j9&sourceid=chrome&ie=UTF-8'
+                        }],
+                        properties: {
+                            '1)': {
+                                'text': 'Prop text 1',
+                                'href': 'https://www.google.com.ua/search?q=Prop+text+1&oq=Prop+text+1&aqs=chrome..69i57j0l5.218j0j7&sourceid=chrome&ie=UTF-8'
+                            },
+                            '2)': {
+                                'text': 'Prop text 2',
+                                'href': 'https://www.google.com.ua/search?q=Prop+text+2&oq=Prop+text+2&aqs=chrome..69i57j0l5.420j0j9&sourceid=chrome&ie=UTF-8'
+                            },
+                            '3)': {
+                                'text': 'Prop text 3',
+                                'href': 'https://www.google.com.ua/search?q=Prop+text+3&oq=Prop+text+3&aqs=chrome..69i57j0l5.287j0j9&sourceid=chrome&ie=UTF-8'
+                            }
+                        }
+                    },
+                    action_links: [{
+                        text: 'Action links text',
+                        href: 'https://www.google.com.ua/search?q=Action+links&oq=Action+links&aqs=chrome..69i57j0l5.575j0j4&sourceid=chrome&ie=UTF-8'
+                    }]
+                });
+            });
+        });
+    });
+</script>
 </body>
 </html>
-<!--<!DOCTYPE html>-->
-<!--<html lang="en-us">-->
-
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>FB Share</title>-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-
-    <!--<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--<button type="button" id="button0">Share 0 (method: 'feed')</button>-->
-<!--&nbsp;-->
-<!--<button type="button" id="button1">Share 1 (method: 'feed')</button>-->
-
-<!--<br>-->
-
-<!--<button type="button" id="button2">Share 2 (method: 'stream.share')</button>-->
-<!--<script>-->
-    <!--$(function() {-->
-        <!--$.getScript('//connect.facebook.net/en_US/sdk.js', function() {-->
-            <!--FB.init({-->
-                <!--appId: '476189115902735',-->
-                <!--version: 'v2.5'-->
-            <!--});-->
-
-            <!--$('#button0').click(function() {-->
-                <!--FB.ui({-->
-                    <!--method: 'feed',-->
-                    <!--name: 'Share 0',-->
-                    <!--link: 'http://boroda.github.io/share-buttons/',-->
-                    <!--picture: 'http://placehold.it/350x150/1e6bb8',-->
-                    <!--caption: 'Caption 0',-->
-                    <!--description: 'Description 0',-->
-                    <!--message: 'Message 0'-->
-                <!--});-->
-            <!--});-->
-
-            <!--$('#button1').click(function() {-->
-                <!--FB.ui({-->
-                    <!--method: 'feed',-->
-                    <!--name: 'Share 1',-->
-                    <!--link: 'http://boroda.github.io/share-buttons/',-->
-                    <!--picture: 'http://placehold.it/350x150/B84443',-->
-                    <!--caption: 'Caption 1',-->
-                    <!--description: 'Description 1',-->
-                    <!--message: 'Message 1'-->
-                <!--});-->
-            <!--});-->
-
-            <!--$('#button2').click(function() {-->
-                <!--FB.ui({-->
-                    <!--method: 'stream.publish',-->
-                    <!--display: 'iframe',-->
-                    <!--user_message_prompt: 'User message prompt',-->
-                    <!--message: 'Message',-->
-                    <!--attachment: {-->
-                        <!--name: 'Attachment name',-->
-                        <!--caption: 'Attachment caption',-->
-                        <!--description: 'Attachment description',-->
-                        <!--href: 'https://www.google.com.ua/search?q=Attachment+href&oq=Attachment+href&aqs=chrome..69i57.187j0j9&sourceid=chrome&ie=UTF-8',-->
-                        <!--media: [{-->
-                            <!--'type': 'image',-->
-                            <!--'src': 'http://placehold.it/350x150/3DFF4B',-->
-                            <!--'href': 'https://www.google.com.ua/search?q=media+type+image&oq=media+type+image&aqs=chrome..69i57j0l5.364j0j9&sourceid=chrome&ie=UTF-8'-->
-                        <!--}],-->
-                        <!--properties: {-->
-                            <!--'1)': {-->
-                                <!--'text': 'Prop text 1',-->
-                                <!--'href': 'https://www.google.com.ua/search?q=Prop+text+1&oq=Prop+text+1&aqs=chrome..69i57j0l5.218j0j7&sourceid=chrome&ie=UTF-8'-->
-                            <!--},-->
-                            <!--'2)': {-->
-                                <!--'text': 'Prop text 2',-->
-                                <!--'href': 'https://www.google.com.ua/search?q=Prop+text+2&oq=Prop+text+2&aqs=chrome..69i57j0l5.420j0j9&sourceid=chrome&ie=UTF-8'-->
-                            <!--},-->
-                            <!--'3)': {-->
-                                <!--'text': 'Prop text 3',-->
-                                <!--'href': 'https://www.google.com.ua/search?q=Prop+text+3&oq=Prop+text+3&aqs=chrome..69i57j0l5.287j0j9&sourceid=chrome&ie=UTF-8'-->
-                            <!--}-->
-                        <!--}-->
-                    <!--},-->
-                    <!--action_links: [{-->
-                        <!--text: 'Action links text',-->
-                        <!--href: 'https://www.google.com.ua/search?q=Action+links&oq=Action+links&aqs=chrome..69i57j0l5.575j0j4&sourceid=chrome&ie=UTF-8'-->
-                    <!--}]-->
-                <!--});-->
-            <!--});-->
-        <!--});-->
-    <!--});-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
