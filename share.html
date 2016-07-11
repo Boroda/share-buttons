@@ -8,11 +8,26 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="fb-root"></div>
+
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="fb-share-button" data-href="https://www.sportchek.ca/" data-layout="button_count" data-mobile-iframe="true">
+        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.sportchek.ca%2F&amp;src=sdkpreparse">Поделиться</a>
+    </div>
+
     <button type="button" id="button0">Share 0 (method: 'feed')</button>&nbsp;
     <button type="button" id="button1">Share 1 (method: 'feed')</button>
     <br>
     <button type="button" id="button2">Share 2 (method: 'stream.share')</button>
-<script>
+
+    <script>
     $(function() {
         $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
             FB.init({
