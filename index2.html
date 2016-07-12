@@ -10,7 +10,7 @@
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Your Website Title" />
     <meta property="og:description"   content="Your description" />
-    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+    <meta property="og:image"         content="http://boroda.github.io/share-buttons/img/images-1.jpg" />
 
     <style>
         .buttons {
@@ -111,7 +111,9 @@
                 FB.ui({
                     method: 'share',
                     href: 'http://boroda.github.io/share-buttons/index2.html',
-                }, function(response){});
+                }, function(response){
+                    console.log(response);
+                });
             });
         });
     });
