@@ -6,18 +6,27 @@
     <title>FB Share</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta property="og:url"           content="http://boroda.github.io/share-buttons/share.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<button type="button" id="button0">Share 0 (method: 'feed')</button>
-&nbsp;
-<button type="button" id="button1">Share 1 (method: 'feed')</button>
+    <div class="buttons">
+        <button type="button" id="button0">Share 0 (method: 'feed')</button>
+        <br>
+        <button type="button" id="button1">Share 1 (method: 'feed')</button>
+        <br>
+        <button type="button" id="button2">Share 2 (method: 'stream.share')</button>
 
-<br>
+        <button type="button" id="button3">Share 3 (method: 'share')</button>
+    </div>
 
-<button type="button" id="button2">Share 2 (method: 'stream.share')</button>
-<script>
+    <script>
     $(function() {
         $.getScript('//connect.facebook.net/en_US/sdk.js', function() {
             FB.init({
@@ -85,6 +94,13 @@
                         href: 'https://www.google.com.ua/search?q=Action+links&oq=Action+links&aqs=chrome..69i57j0l5.575j0j4&sourceid=chrome&ie=UTF-8'
                     }]
                 });
+            });
+
+            $('#button3').on('click', function() {
+                FB.ui({
+                    method: 'share',
+                    href: 'http://boroda.github.io/share-buttons/share.html',
+                }, function(response){});
             });
         });
     });
