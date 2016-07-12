@@ -16,6 +16,27 @@
         .buttons {
             border: 1px solid grey;
         }
+
+        button {
+            background: #6d6f72;
+            border-radius: 0;
+            background: #008fb0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-family: GalaxieCondensedBold, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1;
+            padding: 13px 15px 12px;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        button:hover {
+             background: #06748e;
+             text-decoration: none;
+         }
     </style>
 
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
@@ -34,6 +55,9 @@
         </p>
         <p>
             <button type="button" id="button3">Share 3 (method: 'share')</button>
+        </p>
+        <p>
+            <button type="button" id="button4">Share 4 (method: 'share_open_graph')</button>
         </p>
     </div>
 
@@ -112,6 +136,18 @@
                     method: 'share',
                     href: 'http://boroda.github.io/share-buttons/index2.html',
                 }, function(response){
+                    console.log(response);
+                });
+            });
+
+            $('#button4').on('click', function() {
+                FB.ui({
+                    method: 'share_open_graph',
+                    action_type: 'og.likes',
+                    action_properties: JSON.stringify({
+                        object: 'http://boroda.github.io/share-buttons/index2.html',
+                    })
+                }, function(response) {
                     console.log(response);
                 });
             });
