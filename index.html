@@ -186,7 +186,11 @@
             method: 'share',
             href: window.location.href
         }, function(response){
-            console.log(response);
+            if (response && !response.error_message) {
+                alert('Posting completed.');
+            } else {
+                alert('Error while posting.');
+            }
         });
     });
 
