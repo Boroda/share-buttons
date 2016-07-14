@@ -1,0 +1,166 @@
+.cq-catalogsection-img {
+    float: left;
+    width: 120px;
+    height: 90px;
+    margin-top: 9px;
+    margin-left: 60px;
+}
+
+ul.cq-catalogsection-data {
+    padding-left: 160px;
+    min-height: 120px;
+}
+
+ul.cq-catalogsection-data li {
+    width: 440px;
+}
+
+ul.cq-catalogsection-data li.cq-sampleproducts {
+    margin-top: 32px;
+}
+
+/*
+ * Sample products display
+ */
+ul.cq-sampleproducts {
+    margin-top: 2px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+ul.cq-sampleproducts li {
+    border-top: none;
+    display:inline;
+}
+
+ul.cq-sampleproducts img {
+    vertical-align: middle;
+}
+
+ul.cq-sampleproducts li.cq-sampleproducts-elipsis span {
+    font-size: 180%;
+    padding-left: 4px;
+    vertical-align: middle;
+}
+
+/*
+ * Rollout Changes dialog
+ */
+#CQ .cq-rolloutsectiondialog .cq-rollout-targets {
+    margin: 2px 0 8px 0
+}
+
+#CQ .cq-rolloutsectiondialog .cq-rollout-targets .x-panel-body {
+    padding: 2px
+}
+
+#CQ .cq-rolloutsectiondialog .x-panel-body label.x-form-cb-label-hidden {
+    margin-top: -3px;
+}
+/*
+ * Copyright 2013 Day Management AG
+ * Barfuesserplatz 6, 4001 Basel, Switzerland
+ * All Rights Reserved.
+ *
+ * This software is the confidential and proprietary information of
+ * Day Management AG, ("Confidential Information"). You shall not
+ * disclose such Confidential Information and shall use it only in
+ * accordance with the terms of the license agreement you entered into
+ * with Day.
+ */
+
+#CQ .cq-variations-tree.empty {
+    line-height: 18px;
+    font-style: italic;
+}
+
+#CQ .cq-variations-tree li {
+    line-height: 18px;
+}
+
+#CQ .cq-variations-tree .cq-variations-tree li {
+    padding-left: 20px;
+}
+
+#CQ .cq-variations-tree a {
+    text-decoration: underline;
+    color: #15428B;
+    cursor: pointer;
+}
+
+
+/*
+ * Copyright 2013 Day Management AG
+ * Barfuesserplatz 6, 4001 Basel, Switzerland
+ * All Rights Reserved.
+ *
+ * This software is the confidential and proprietary information of
+ * Day Management AG, ("Confidential Information"). You shall not
+ * disclose such Confidential Information and shall use it only in
+ * accordance with the terms of the license agreement you entered into
+ * with Day.
+ */
+
+#CQ .cq-variations-breadcrumb a {
+    text-decoration: underline;
+    color: #15428B;
+    cursor: pointer;
+}
+
+
+div.perfectpartner.config {
+    width: 660px;
+}
+
+div.parsys.pairings {
+    width: 580px;
+}
+
+.product-pairing-label {
+    display: inline;
+    vertical-align: top;
+}
+
+.li-bullet.product-pairing {
+    display: inline-block;
+    width: 250px;
+}
+
+.li-bullet.product-pairing img {
+    display: inline;
+    margin-left: 6px;
+    margin-right: 3px;
+    vertical-align: top;
+}
+
+.li-bullet.product-pairing div {
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: top;
+}
+
+.li-bullet.product-pairing img.cq-product-not-found {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    margin-right: 0px;
+    width: 18px;
+    height: 18px;
+    background-image: url('../../../cq/ui/widgets/themes/default/icons/48x48/excl-red.png');
+}
+
+.li-bullet.product-pairing div.cq-product-not-found {
+    margin-top: 17px;
+    margin-left: 0px;
+    font-style: italic;
+}
+
+/* Import dialog */
+#CQ .cq-import-pairings-dialog div.cq-static.cq-margin-top {
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+#CQ .cq-import-pairings-dialog div.cq-static pre {
+    letter-spacing: -0.5px;
+}
