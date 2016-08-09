@@ -103,6 +103,29 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+
+    <script>
+        window.twttr = (function(d, s, id) {
+            var js;
+            var fjs = d.getElementsByTagName(s)[0]
+            var t = window.twttr || {};
+
+            if (d.getElementById(id)) return t;
+
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        } (document, "script", "twitter-wjs"));
+    </script>
     <!--<div>
         <img src="img/images-1.jpg" alt="Image birds here"/>
     </div>
@@ -128,7 +151,7 @@
             <button type="button" id="button3">Share 3 (method: 'share')</button>
         </p>
         <p>
-            <button type="button" id="button4">Share 4 (method: 'share_open_graph')</button>
+            <button type="button" id="button4">Twitter</button>
         </p>
     </div>
 
@@ -240,6 +263,20 @@
             console.error('"ShareViaFacebook.shareData" >> Facebook object (FB) is undefined');
         }
     });
+
+
+    twttr.widgets.createShareButton(
+        'https://dev.twitter.com/web/tweet-button',
+        document.getElementById("button4"),
+        {
+            size: "large",
+            via: "twitterdev",
+            related: "twitterapi,twitter",
+            text: "custom share text",
+            hashtags: "example,demo"
+        }
+    );
+
 
     </script>
 </body>
