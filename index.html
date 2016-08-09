@@ -247,36 +247,33 @@
 //                });
 //            });
 //        });
-    $('#button3').on('click', function() {
-//        FB.ui({
-//            method: 'share',
-//            href: window.location.href
-//        });
-        var FB = window.FB;
+        $('#button3').on('click', function() {
+    //        FB.ui({
+    //            method: 'share',
+    //            href: window.location.href
+    //        });
+            var FB = window.FB;
 
-        if (FB && FB.ui) {
-            FB.ui({
-                method: 'share',
-                href: window.location.href
-            });
-        } else {
-            console.error('"ShareViaFacebook.shareData" >> Facebook object (FB) is undefined');
-        }
-    });
+            if (FB && FB.ui) {
+                FB.ui({
+                    method: 'share',
+                    href: window.location.href
+                });
+            } else {
+                console.error('"ShareViaFacebook.shareData" >> Facebook object (FB) is undefined');
+            }
+        });
 
+        $('#button4').on('click', function() {
+            var DEFAULTS = {
+                TWITTER_URL: 'http://twitter.com/share?url='
+            };
 
-    twttr.widgets.createShareButton(
-        'https://dev.twitter.com/web/tweet-button',
-        document.getElementById("button4"),
-        {
-            size: "large",
-            via: "twitterdev",
-            related: "twitterapi,twitter",
-            text: "custom share text",
-            hashtags: "example,demo"
-        }
-    );
+            var url = DEFAULTS.TWITTER_URL + window.location.href;
 
+            window.open(url);
+
+        });
 
     </script>
 </body>
