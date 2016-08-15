@@ -148,13 +148,22 @@
             <button type="button" id="button1">Share 1 (method: 'feed')</button>
         </p>
         <p>
-            <button type="button" id="button2">Share 2 (method: 'stream.share')</button>
+            <!--<button type="button" id="pinterest">-->
+                <!--<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-custom="true">-->
+                    <!--Pinterest-->
+                <!--</a>-->
+            <!--</button>-->
+            <button type="button" id="pinterest" class="social pinterest"
+                    data-media="http://tinyurl.com/p3rqf54"
+                    data-description="A delicious burger">
+                Pinterest
+            </button>
         </p>
         <p>
-            <button type="button" id="button3">Share 3 (method: 'share')</button>
+            <button type="button" id="facebook">Facebook</button>
         </p>
         <p>
-            <button type="button" class="twitter-share-button" id="button4">Twitter</button>
+            <button type="button" class="twitter-share-button" id="twitter">Twitter</button>
         </p>
     </div>
 
@@ -250,11 +259,14 @@
 //                });
 //            });
 //        });
-        $('#button3').on('click', function() {
-    //        FB.ui({
-    //            method: 'share',
-    //            href: window.location.href
-    //        });
+        $('#pinterest').on('click', function() {
+            PinUtils.pinOne({
+                media: e.target.getAttribute('data-media'),
+                description: e.target.getAttribute('data-description')
+            });
+        });
+
+        $('#facebook').on('click', function() {
             var FB = window.FB;
 
             if (FB && FB.ui) {
@@ -267,7 +279,7 @@
             }
         });
 
-        $('#button4').on('click', function() {
+        $('#twitter').on('click', function() {
             var DEFAULTS = {
                 TWITTER_URL: 'http://twitter.com/share?url='
             };
@@ -275,7 +287,6 @@
             var url = DEFAULTS.TWITTER_URL + window.location.href;
 
             window.open(url);
-
         });
 
     </script>
