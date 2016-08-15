@@ -257,10 +257,10 @@
 //        });
         $('#pinterest').on('click', function(e) {
             PinUtils.pinOne({
-                'url': 'https://www.sportchek.ca/categories/women/footwear/insoles-shoecare/insoles/product/superfeet-premium-insole-green-330127973.html',
-                'media': 'https://fgl.scene7.com/is/image/FGLSportsLtd/330127973_99_a?bgColor=0,0,0,0&fmt=png-alpha&hei=200&wid=200&resMode=sharp2&op_sharpen=1',
-                'title': 'My custom title',
-                'description': 'Maximize the fit, comfort and performance of your shoes with the Superfeet Green Premium Insole. Green adds maximum Superfeet support, shock absorption and stability to your athletic, industrial or everyday footwear.'
+                'url': $('meta[property="og:url"]').attr('content'),
+                'media': $('meta[property="og:image"]').attr('content'),
+                'title': $('meta[property="og:title"]').attr('content'),
+                'description': $('meta[property="og:description"]').attr('content')
             });
         });
 
