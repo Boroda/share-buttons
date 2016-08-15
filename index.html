@@ -261,7 +261,7 @@
 //                });
 //            });
 //        });
-        $('#pinterest').on('click', function() {
+        $('#pinterest').on('click', function(e) {
             PinUtils.pinOne({
                 media: e.target.getAttribute('data-media'),
                 description: e.target.getAttribute('data-description')
