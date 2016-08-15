@@ -128,35 +128,36 @@
     </p>
 </div>
 
-<script>
-    $('#button3').on('click', function() {
-        //        FB.ui({
-        //            method: 'share',
-        //            href: window.location.href
-        //        });
-        var FB = window.FB;
+    <script>
+        $('#button3').on('click', function() {
+            //        FB.ui({
+            //            method: 'share',
+            //            href: window.location.href
+            //        });
+            var FB = window.FB;
 
-        if (FB && FB.ui) {
-            FB.ui({
-                method: 'share',
-                href: window.location.href
-            });
-        } else {
-            console.error('"ShareViaFacebook.shareData" >> Facebook object (FB) is undefined');
-        }
-    });
+            if (FB && FB.ui) {
+                FB.ui({
+                    method: 'share',
+                    href: window.location.href
+                });
+            } else {
+                console.error('"ShareViaFacebook.shareData" >> Facebook object (FB) is undefined');
+            }
+        });
 
-    $('#button4').on('click', function() {
-        var DEFAULTS = {
-            TWITTER_URL: 'http://twitter.com/share?url='
-        };
+        $('#button4').on('click', function() {
+            var DEFAULTS = {
+                TWITTER_URL: 'http://twitter.com/share?url='
+            };
 
-        var url = DEFAULTS.TWITTER_URL + window.location.href;
+            var url = DEFAULTS.TWITTER_URL + window.location.href;
 
-        window.open(url);
+            window.open(url);
 
-    });
+        });
 
-</script>
+    </script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>
