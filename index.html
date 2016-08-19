@@ -101,78 +101,45 @@
             background: url('img/icons-13832e77.png') no-repeat 0px -2113px;
         }
     </style>
-
-    <!--<script src="js/modernizr.js"></script>-->
 </head>
 
 <body>
-<script>
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '476189115902735',
-            version: 'v2.6'
-        });
-    };
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '476189115902735',
+                version: 'v2.6'
+            });
+        };
 
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-<!--<div>
-    <img src="img/images-1.jpg" alt="Image birds here"/>
-</div>
-<p>
-    <a target="_blank" href="http://www.facebook.com/dialog/share?app_id=476189115902735&display=popup&href=http://boroda.github.io/share-buttons/&redirect_uri=http://boroda.github.io/share-buttons/">Facebook</a>
-    |
-    <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://boroda.github.io/share-buttons">Facebook Sharer</a>
-    |
-    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://boroda.github.io/share-buttons">Facebook Sharer</a>
-</p>-->
-
-<div class="buttons">
-    <ul>
-        <li>
-            <!--<button type="button" id="pinterest">-->
-            <!--<a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-custom="true">-->
-            <!--Pinterest-->
-            <!--</a>-->
-            <!--</button>-->
-            <button type="button" id="pinterest">
-                    <!--data-media="http://tinyurl.com/p3rqf54"-->
-                    <!--data-description="A delicious burger">-->
-                Pinterest
-            </button>
-        </li>
-        <!--<li>-->
-            <!--<a data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url=http://www.foodiecrush.com/2014/03/filet-mignon-with-porcini-mushroom-compound-butter/&media=https://s-media-cache-ak0.pinimg.com/736x/17/34/8e/17348e163a3212c06e61c41c4b22b87a.jpg&description=So%20delicious!" data-pin-custom="true"></a>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<button data-pin-do="buttonPin"-->
-                    <!--data-pin-lang="ru"-->
-                    <!--data-pin-round="true"-->
-                    <!--data-pin-save="false" href="https://ru.pinterest.com/pin/create/button/">-->
-                <!--Pinterest 2-->
-            <!--</button>-->
-        <!--</li>-->
-        <li>
-            <button type="button" id="facebook">Facebook</button>
-        </li>
-        <li>
-            <button type="button" class="twitter-share-button" id="twitter">Twitter</button>
-        </li>
-        <li>
-            <button id="mod">Modernizr</button>
-        </li>
-    </ul>
-</div>
+    <div class="buttons">
+        <ul>
+            <li>
+                <button type="button" id="pinterest">Pinterest</button>
+            </li>
+            <li>
+                <button type="button" id="facebook">Facebook</button>
+            </li>
+            <li>
+                <button type="button" class="twitter-share-button" id="twitter">Twitter</button>
+            </li>
+            <li>
+                <button id="mod">Modernizr</button>
+            </li>
+        </ul>
+    </div>
 
     <script>
         //        $(function() {
@@ -311,5 +278,6 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
     <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
     <script src="js/modernizr.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
