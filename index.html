@@ -185,14 +185,16 @@
                 <!--Pinterest 2-->
             <!--</button>-->
         <!--</li>-->
+        <li>
+            <button type="button" id="facebook">Facebook</button>
+        </li>
+        <li>
+            <button type="button" class="twitter-share-button" id="twitter">Twitter</button>
+        </li>
+        <li>
+            <button id="mod">Modernizr</button>
+        </li>
     </ul>
-    <p>
-    <p>
-        <button type="button" id="facebook">Facebook</button>
-    </p>
-    <p>
-        <button type="button" class="twitter-share-button" id="twitter">Twitter</button>
-    </p>
 </div>
 
     <script>
@@ -295,7 +297,7 @@
             });
         });
 
-        $('#facebook').on('click', function () {
+        $('#facebook').on('click', function() {
             var FB = window.FB;
 
             if (FB && FB.ui) {
@@ -308,7 +310,7 @@
             }
         });
 
-        $('#twitter').on('click', function () {
+        $('#twitter').on('click', function() {
             var DEFAULTS = {
                 TWITTER_URL: 'http://twitter.com/share?url='
             };
@@ -318,13 +320,15 @@
             window.open(url);
         });
 
-        if (Modernizr) {
-            // можем рисовать!
-            alert('Canvas works!');
-        } else {
-            // в противном случае выполняем fallback
-            alert('Canvas does not work!');
-        }
+        $('#mod').on('click', function() {
+            if (Modernizr) {
+                // можем рисовать!
+                alert('Canvas works!');
+            } else {
+                // в противном случае выполняем fallback
+                alert('Canvas does not work!');
+            }
+        });
     </script>
 
     <script src="js/modernizr.min.js"></script>
