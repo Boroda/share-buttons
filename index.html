@@ -92,6 +92,7 @@
 
         li {
             list-style: none;
+            padding: 5px;
         }
         a {
             display: block;
@@ -101,8 +102,6 @@
         }
     </style>
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
-    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
     <!--<script src="js/modernizr.js"></script>-->
 </head>
 
@@ -127,28 +126,6 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script>
-    window.twttr = (function (d, s, id) {
-        var js;
-        var fjs = d.getElementsByTagName(s)[0]
-        var t = window.twttr || {};
-
-        if (d.getElementById(id)) return t;
-
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-
-        t._e = [];
-
-        t.ready = function (f) {
-            t._e.push(f);
-        };
-
-        return t;
-    }(document, "script", "twitter-wjs"));
-</script>
 <!--<div>
     <img src="img/images-1.jpg" alt="Image birds here"/>
 </div>
@@ -331,6 +308,8 @@
         });
     </script>
 
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
     <script src="js/modernizr.min.js"></script>
 </body>
 </html>
