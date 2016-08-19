@@ -103,7 +103,7 @@
 
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" crossorigin="anonymous"></script>
     <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-    <script async defer src="js/modernizr.min.js"></script>
+    <script src="js/modernizr.js"></script>
 </head>
 
 <body>
@@ -318,7 +318,7 @@
             window.open(url);
         });
 
-        if (Modernizr) {
+        if (!Modernizr.touch) {
             // можем рисовать!
             alert('Canvas works!');
         } else {
