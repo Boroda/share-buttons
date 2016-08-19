@@ -318,7 +318,7 @@
             window.open(url);
         });
 
-        if (!Modernizr.touch) {
+        if (Modernizr) {
             // можем рисовать!
             alert('Canvas works!');
         } else {
